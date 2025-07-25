@@ -158,7 +158,12 @@ projectList.appendChild(li);
 }
 
 function renderTodos() {
-  if (!currProj) return;
+  if (!currProj){
+    currentProjectTitle.textContent = "Select a Project";
+    todoList.innerHTML = "";
+
+    return;
+  }
   currentProjectTitle.textContent = `Tasks in: ${currProj.name}`;
 
   todoList.innerHTML = "";
