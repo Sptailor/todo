@@ -1,0 +1,288 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&family=Patrick+Hand&display=swap');
+
+body {
+  font-family: 'Inter', sans-serif;
+  background: linear-gradient(135deg, #fdfbfb 0%, #ebedee 100%);
+  margin: 0;
+  padding: 0;
+  min-height: 100vh;
+  color: #2e2e2e;
+}
+
+#app {
+  display: flex;
+  height: 100vh;
+  overflow: hidden;
+}
+
+h1, h2, h3 {
+  color: #333;
+}
+
+ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+li {
+  margin: 5px 0;
+  padding: 10px;
+  border-radius: 6px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+#todo-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 16px;
+  margin: 20px 0;
+  padding: 0;
+}
+
+/* Note-card style for todos */
+.todo-card {
+  background: #fffef0;
+  padding: 15px 20px;
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  transition: transform 0.2s ease;
+  font-family: 'Patrick Hand', cursive;
+
+   word-wrap: break-word;
+    overflow-wrap: break-word;
+    white-space: normal;
+    height: auto;
+}
+
+  
+  .todo-body p {
+    overflow-wrap: break-word;
+    word-break: break-word;
+    white-space: normal;
+  }
+
+.todo-card:hover {
+  transform: scale(1.02);
+}
+
+/* Header of each todo card */
+.todo-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  border-bottom: solid 1px black;
+}
+
+#actions {
+  display: flex;
+  gap: 10px;
+}
+
+#actions button:hover {
+  background-color: #ececec;
+  cursor: pointer;
+}
+
+/* Buttons */
+button {
+  cursor: pointer;
+  background-color: #a71d2a;
+  color: white;
+  font-weight: 500;
+  border: none;
+  border-radius: 6px;
+  padding: 8px 12px;
+  transition: background 0.2s;
+}
+
+button:hover {
+  background-color: #2a2a2a52;
+
+}
+#todo-form-container {
+    transition: all 0.3s ease;
+    margin-top: 10px;
+  }
+/* Form styles */
+form {
+    background:rgb(108 0 255 / 1%);
+
+
+    backdrop-filter: blur(10px);
+    border-radius: 10px;
+    padding: 15px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    max-width: 400px;
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* centers the inputs/buttons inside */
+   
+  }
+
+
+
+form input,
+form select,
+form button {
+  display: block;
+  width: 100%;
+  max-width: 300px;
+  margin-bottom: 10px;
+  font-size: 1rem;
+  border-radius: 4px;
+   
+}
+
+/* Completed task */
+.completed {
+  opacity: 0.6;
+  text-decoration: line-through;
+}
+
+/* Priority Colors */
+.high-priority {
+  background: #ffebee;
+  border-left: 6px solid #e53935;
+}
+
+.medium-priority {
+  background: #fff3e0;
+  border-left: 6px solid #fb8c00;
+}
+
+.low-priority {
+  background: #e8f5e9;
+  border-left: 6px solid #43a047;
+}
+
+/* Delete and complete buttons */
+.complete-btn {
+  background: transparent;
+  border: none;
+  color: green;
+  font-size: 1rem;
+}
+
+.complete-btn:hover i {
+  color: darkgreen;
+}
+
+.delete-btn,
+.trash-btn,
+.edit-btn {
+
+  background: none;
+  border: none;
+  color: #dc3545;
+  cursor: pointer;
+  font-size: 1.1rem;
+}
+
+.delete-btn:hover i,
+.trash-btn:hover {
+  color: #a71d2a;
+}
+
+/* Sidebar styling */
+#sidebar {
+  width: 260px;
+      background-color: #ffffff91;
+
+
+  padding: 20px;
+  border-right: 1px solid #ccc;
+  box-shadow: 2px 0 8px rgba(0,0,0,0.05);
+  overflow-y: auto;
+}
+
+#sidebar h2 {
+  font-size: 1.4rem;
+  margin-bottom: 10px;
+}
+
+#sidebar button#show-projectForm {
+  background-color: #28a745;
+  border: none;
+  color: white;
+  font-size: 100%;
+  width: 30px;
+  height: 30px;
+  border-radius: 20%;
+  margin-top: 10px;
+  cursor: pointer;
+  padding: 6px 10px;
+}
+
+#show-projectForm:hover {
+  background-color: #218838;
+}
+
+#project-form {
+  margin-top: 10px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+#project-form input{
+margin-top:2%;
+font-size: 15px;
+}
+
+#project-list li {
+  background: white;
+  padding: 10px;
+  border-radius: 8px;
+  margin: 5px 0;
+  border-left: 4px solid #2196f3;
+  transition: background 0.2s;
+  font-weight: 500;
+}
+
+#project-list li:hover {
+  background: #e3f2fd;
+}
+
+#main {
+    position: relative;
+    flex: 1;
+    padding: 20px;
+    overflow-y: auto;
+    z-index: 1;
+    background-color: rgb(0 0 0 / 79%);    
+    padding-top: 0;;
+  }
+  
+  
+  #main h2, #main h3{
+    color: white;
+
+  }
+  #background-blur {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url("bg.jpg");
+    background-size: cover;
+    background-position: center;
+    filter: blur(4px) brightness(0.7);
+    z-index: -100; /* behind everything */
+    opacity: 0.6;
+  }
+
+
+#current-project-title {
+  font-size: 2rem;
+  font-weight: 600;
+  color: #37474f;
+  border-bottom: 2px dashed #ccc;
+  padding-bottom: 6px;
+  text-align: center;
+}
